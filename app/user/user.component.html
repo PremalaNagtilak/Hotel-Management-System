@@ -1,0 +1,87 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <legend class="text-center">Valid information is required to register. <span class="req">
+                    <small>required *</small></span>
+                </legend> 
+                <div>
+                    <h3 style="padding-left: 40px;">User <span style="border-bottom: 3px solid black;">Re</span>g<span style="border-bottom: 3px solid black;">istration</span> Form</h3>
+                </div>
+                <div>
+                    <div class="form-group col-6"  style="padding-left: 40px; padding-top: 10px;">
+                        <label for="firstName">First Name:</label>
+                        <input required type="text" [(ngModel)]="user.firstName" name="firstName" id="firstName" 
+                        class="form-control phone" maxlength="30" placeholder="Enter your First Name..." required style="padding-right: 20px;" />
+            </div>
+            <div class="form-group col-6"  style="padding-left: 40px; padding-top: 10px;">
+                <label for="lastName">Last Name:</label>
+                <input required type="text" [(ngModel)]="user.lastName"  name="lastName" id="lastName"
+                class="form-control phone" maxlength="30" placeholder="Enter your Last Name..." required style="padding-right: 20px;"/>
+        </div>
+    </div>
+    <div>
+        <div class="form-group col-6"  style="padding-left: 40px;">
+            <label for="email">Email:</label>
+            <input required type="email" [(ngModel)]="user.email" name="email" id="email"
+                class="form-control phone" maxlength="28" placeholder="Enter Email..." required style="padding-right: 20px;"/>
+        </div>
+        <div class="form-group col-6"  style="padding-left: 40px;">
+            <label for="contactNo">contactNO:</label>
+            <input required type="tel" [(ngModel)]="user.contactNo" name="contactNo" id="contactNo" required pattern="[0-9]{10}"
+                class="form-control phone" maxlength="28" placeholder="EnterContactNO..." required style="padding-right: 20px;"/>
+        </div>
+    </div>
+    <div>
+        <div class=" forn-group col-6"  style="padding-left:40px;font-weight: 300;">
+            <label> Identity:</label><br>
+            <div class="col-2" style="padding-left:40px;" >
+                <input type="radio" [(ngModel)]="user.identity" name="identity" value="adhar" >
+                <label for="identity">Adhar Card</label >
+            </div>
+            <div class="col-2" style=" padding-left: 45px;">
+                <input type="radio" [(ngModel)]="user.identity" name="identity" value="PAN">
+                <label for="identity">PAN Card</label>
+            </div>
+            <div class="col-2" style="padding-left: 45px;" >
+                <input type="radio" [(ngModel)]="user.identity" name="identity" value="voting">
+                <label for="identity">Voting Card</label>
+            </div>
+        </div> 
+    <div>
+        <div class="form-group col-6"  style="padding-left: 40px;">
+            <label for="username">Username:</label>
+            <input required type="text" [(ngModel)]="user.userName" name="username" id="username"
+                class="form-control phone" maxlength="28" placeholder="Enter Username..." required="username" style="padding-right: 20px;"/>
+        </div>
+        <div class="form-group col-6"  style="padding-left: 40px;">
+            <label for="docpassword">Password:</label>
+            <input required type="text" [(ngModel)]="user.password" name="docpassword" id="docpassword" required="docpassword"
+                class="form-control phone" maxlength="28" placeholder="Enter Password..." required style="padding-right: 20px;"/>
+        </div>
+        <div class="form-group col-6"  style="padding-left: 40px;">
+            <label for="userRole">User Role:</label>
+            <input required type="text" [(ngModel)]="user.userRole" name="userRole" id="userRole" required="userRole"
+                class="form-control phone" maxlength="28" placeholder="Enter Password..." required style="padding-right: 20px;"/>
+        </div>
+    </div>
+    <div class="form-group col-12" style="text-align: center;padding-bottom: 40px;padding-left: 65px;padding-right: 40px;padding-top: 20px;">
+        <button class="btn btn-success " (click)="registerNow()" value="Register" >
+            Register
+        </button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</form>
